@@ -1,11 +1,22 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { ServiceBroker } from '@geut/moleculer-browser'
 
-import confetti from 'canvas-confetti';
+const broker = new ServiceBroker({
+  transporter: { type: 'fake' },
+  serializer: 'Json',
+  logger: console
+})
 
-confetti.create(document.getElementById('canvas'), {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+broker.createService({
+  name: 'math',
+  actions: {
+    add (ctx) {
+      return Number(ctx.params.a) + Number(ctx.params.b)
+    }
+  }
+})
+
+broker.start()
+// Call service
+  .then(() => broker.call('math.add', { a: 5, b: 3 }))
+  .then(res => console.log('5 + 3 =', res))
+  .catch(err => console.error(`Error occured! ${err.message}`))

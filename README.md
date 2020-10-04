@@ -1,6 +1,6 @@
-# New Project
+# moleculer-browser-snowpack
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+> moleculer-browser running with Snowpack with full ESM support.
 
 ## Available Scripts
 

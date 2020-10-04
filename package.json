@@ -1,16 +1,16 @@
 {
+  "name": "moleculer-browser-snowpack",
+  "description": "moleculer-browser running with Snowpack with full ESM support",
+  "version": "0.0.1",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
-    "format": "prettier --write \"src/**/*.js\"",
-    "lint": "prettier --check \"src/**/*.js\""
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
   "dependencies": {
-    "canvas-confetti": "^1.2.0"
+    "@geut/moleculer-browser": "0.0.9"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
     "snowpack": "^2.13.0"
   }
 }
